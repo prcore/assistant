@@ -15,6 +15,7 @@ services:
       WEB_TITLE: ${WEB_TITLE}
       SIDEBAR_TITLE: ${SIDEBAR_TITLE}
       MAGIC_WORD: ${MAGIC_WORD}
+      TEST: ${TEST}
     volumes:
       - ./data:/app/data
     ports:

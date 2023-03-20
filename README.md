@@ -1,4 +1,4 @@
-# PrCore Docs Assistant
+# Docs Assistant
 
 This is a simple tool to help you to create an AI-powered chatbot for your documentation.
 
