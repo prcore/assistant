@@ -25,7 +25,7 @@ def get_input() -> str:
     st.text_input(
         label="You: ",
         value="",
-        placeholder=("Your AI assistant here! Ask me anything about PrCore"
+        placeholder=("Type here, send with Enter"
                      if not st.session_state.input_disabled else "Getting response..."),
         label_visibility="hidden",
         key="temp",
