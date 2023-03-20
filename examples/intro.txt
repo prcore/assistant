@@ -1,0 +1,6 @@
+This is a chatbot that can answer questions about PrCore's usage.
+It may not be able to answer all questions,
+and may provide incorrect answers. Please use this as a reference only.
+
+For exact information, please refer to the [PrCore Documentation](https://prcore-docs.chaos.run).
+<br/><br/>

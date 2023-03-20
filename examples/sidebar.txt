@@ -1,0 +1,5 @@
+- [PrCore Documentation](https://prcore-docs.chaos.run)
+- [PrCore on GitHub](https://github.com/prcore)
+- [Assistant source code](https://github.com/prcore/assistant)
+- [Demo API](https://prcore.chaos.run)
+<br/><br/>

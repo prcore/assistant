@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+
+  core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: prcore-assistant
+    restart: always
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_TIMEOUT: ${OPENAI_TIMEOUT}
+      WEB_PORT: ${WEB_PORT}
+      WEB_TITLE: ${WEB_TITLE}
+      SIDEBAR_TITLE: ${SIDEBAR_TITLE}
+      MAGIC_WORD: ${MAGIC_WORD}
+    volumes:
+      - ./data:/app/data
+    ports:
+      - ${WEB_PORT}:8501
