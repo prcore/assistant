@@ -22,6 +22,9 @@ def set_web():
         st.markdown(sidebar_text, unsafe_allow_html=True)
 
     if st.session_state.get("magic_mode", False):
+        if not st.session_state.get("celebrated", False):
+            st.balloons()
+            st.session_state["celebrated"] = True
         with open(config.MAGIC_PATH, "r") as f:
             magic_text = f.read()
         st.markdown(magic_text, unsafe_allow_html=True)

@@ -1,5 +1,8 @@
 # Docs Assistant
 
+[![](https://img.shields.io/github/actions/workflow/status/prcore/assistant/main.yml?label=Docker%20compose%20service)](https://github.com/prcore/assistant/actions/workflows/main.yml)
+[![](https://img.shields.io/website?label=Demo%20service&url=https%3A%2F%2Fprcore-assistant.chaos.run)](https://prcore-assistant.chaos.run)
+
 This is a simple tool to help you to create an AI-powered chatbot for your documentation.
 
 What it used:
