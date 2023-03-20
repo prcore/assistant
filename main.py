@@ -54,6 +54,7 @@ def check_input(container: DeltaGenerator, query: str) -> None:
 if __name__ == '__main__':
     web.set_web()
     init_session_state()
+    index.create_index()
     index.load_vector_store()
     conversation_container = st.empty()
     web.display_conversation(conversation_container)

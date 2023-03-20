@@ -7,10 +7,9 @@ if [ "$current_dir" != "scripts" ]; then
     exit 1
 fi
 
-bash mkdir.sh
 cd ..
-nano ./.env
-nano ./data/intro.txt
-nano ./data/magic.txt
-nano ./data/prompt.txt
-nano ./data/sidebar.txt
+mkdir -p ./data/log
+mkdir -p ./data/docs
+mkdir -p ./data/langchain
+cp -r ./examples ./data
+cp ./examples/example.env ./.env

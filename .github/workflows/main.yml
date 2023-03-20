@@ -1,0 +1,16 @@
+name: Docker Compose Test
+on:
+  push:
+    branches:
+      - main
+jobs:
+  compose-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up data folder and env file
+        run: cd scripts && bash ./mkdir.sh && cd .. && echo "TEST=1" >> .env
+      - name: Docker Compose Action
+        uses: isbang/compose-action@v1.4.1
+      - name: Test service status
+        run: bash ./scripts/test.sh
