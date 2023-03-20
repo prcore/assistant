@@ -5,7 +5,9 @@ anyio==3.6.2
 APScheduler==3.10.1
 async-timeout==4.0.2
 attrs==22.2.0
+beautifulsoup4==4.12.0
 blinker==1.5
+bs4==0.0.1
 cachetools==5.3.0
 certifi==2022.12.7
 charset-normalizer==3.1.0
@@ -35,7 +37,6 @@ joblib==1.2.0
 jsonschema==4.17.3
 langchain==0.0.117
 lit==15.0.7
-llama-index==0.4.33
 lz4==4.3.2
 markdown-it-py==2.2.0
 MarkupSafe==2.1.2
@@ -89,6 +90,7 @@ sentencepiece==0.1.97
 six==1.16.0
 smmap==5.0.0
 sniffio==1.3.0
+soupsieve==2.4
 SQLAlchemy==1.4.47
 sse-starlette==1.3.3
 starlette==0.26.1

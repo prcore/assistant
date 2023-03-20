@@ -24,10 +24,10 @@ def init_session_state() -> None:
 
 
 def check_input(container: DeltaGenerator, query: str) -> None:
-    print(f"Query: {query}")
-
     if not query:
         return
+
+    print(f"Query: {query}")
 
     if query == os.getenv("MAGIC_WORD", "".join(choice(ascii_letters + digits) for _ in range(16))):
         st.session_state["magic_mode"] = True

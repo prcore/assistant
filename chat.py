@@ -5,8 +5,8 @@ import streamlit as st
 
 from langchain.chains import ConversationChain
 from langchain.chains.question_answering import load_qa_chain
+from langchain.chat_models import ChatOpenAI
 from langchain.docstore.document import Document
-from langchain.llms import OpenAI
 from langchain.memory import ConversationSummaryBufferMemory
 from langchain.prompts import PromptTemplate
 from langchain.vectorstores import Chroma
@@ -52,7 +52,7 @@ def get_response(query: str) -> str:
 def get_chain():
     if "chain" not in st.session_state:
         st.session_state["chain"] = load_qa_chain(
-            llm=OpenAI(
+            llm=ChatOpenAI(
                 temperature=0,
                 model_name=config.MODEL_NAME,
                 request_timeout=int(os.getenv("OPENAI_TIMEOUT", 15))
@@ -66,7 +66,7 @@ def get_chain():
 
 def get_magic_chain():
     return ConversationChain(
-        llm=OpenAI(
+        llm=ChatOpenAI(
             temperature=0,
             model_name=config.MODEL_NAME,
             request_timeout=int(os.getenv("OPENAI_TIMEOUT", 15))
@@ -82,7 +82,7 @@ def get_memory() -> ConversationSummaryBufferMemory:
 
 
 def new_memory() -> ConversationSummaryBufferMemory:
-    llm = OpenAI(model_name=config.MODEL_NAME, request_timeout=int(os.getenv("OPENAI_TIMEOUT", 15)))
+    llm = ChatOpenAI(model_name=config.MODEL_NAME, request_timeout=int(os.getenv("OPENAI_TIMEOUT", 15)))
     memory = ConversationSummaryBufferMemory(
         llm=llm,
         memory_key="chat_history",
@@ -92,7 +92,7 @@ def new_memory() -> ConversationSummaryBufferMemory:
 
 
 def new_magic_memory() -> ConversationSummaryBufferMemory:
-    llm = OpenAI(model_name=config.MODEL_NAME, request_timeout=int(os.getenv("OPENAI_TIMEOUT", 15)))
+    llm = ChatOpenAI(model_name=config.MODEL_NAME, request_timeout=int(os.getenv("OPENAI_TIMEOUT", 15)))
     memory = ConversationSummaryBufferMemory(llm=llm)
     return memory
 
