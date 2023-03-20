@@ -1,4 +1,3 @@
-import logging
 import os
 from copy import deepcopy
 
@@ -6,9 +5,6 @@ import streamlit as st
 from streamlit.delta_generator import DeltaGenerator
 
 import config
-
-# Enable logging
-logger = logging.getLogger(__name__)
 
 
 def set_web():

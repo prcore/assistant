@@ -1,4 +1,3 @@
-import logging
 import os
 from random import choice
 from string import ascii_letters, digits
@@ -7,18 +6,8 @@ import streamlit as st
 from streamlit.delta_generator import DeltaGenerator
 
 import chat
-import config
 import index
 import web
-
-# Enable logging
-logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    level=logging.WARNING,
-    filename=f"{config.LOG_PATH}/log",
-    filemode="a"
-)
-logger = logging.getLogger(__name__)
 
 
 def init_session_state() -> None:
@@ -35,7 +24,7 @@ def init_session_state() -> None:
 
 
 def check_input(container: DeltaGenerator, query: str) -> None:
-    logger.warning(f"Query: {query}")
+    print(f"Query: {query}")
 
     if not query:
         return

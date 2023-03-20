@@ -1,4 +1,3 @@
-import logging
 import os
 
 import streamlit as st
@@ -8,9 +7,6 @@ from langchain.vectorstores import Chroma
 from langchain.indexes.vectorstore import VectorstoreIndexCreator
 
 import config
-
-# Enable logging
-logger = logging.getLogger(__name__)
 
 
 @st.cache_data

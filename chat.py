@@ -1,4 +1,3 @@
-import logging
 import os
 from copy import deepcopy
 
@@ -14,9 +13,6 @@ from langchain.vectorstores import Chroma
 
 import config
 from index import load_vector_store
-
-# Enable logging
-logger = logging.getLogger(__name__)
 
 
 def clear_input() -> None:
@@ -49,7 +45,7 @@ def get_response(query: str) -> str:
             response = chain({"input_documents": get_documents(query), "human_input": query}, return_only_outputs=True)
             return response.get("output_text").strip()
     except Exception as e:
-        logging.warning(f"Get response error: {e}", exc_info=True)
+        print(f"Get response error: {e}")
         return "Connection error. Please try again later."
 
 
