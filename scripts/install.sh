@@ -9,13 +9,7 @@ fi
 
 cd ..
 
-mkdir -p ./data/log
-mkdir -p ./data/docs
-mkdir -p ./data/langchain
-cp -r ./examples ./data
-cp ./examples/example.env ./.env
-nano ./.env
-
+docker builder prune -f --filter "until=6h"
 docker compose build
 docker compose up -d
 

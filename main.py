@@ -35,6 +35,8 @@ def init_session_state() -> None:
 
 
 def check_input(container: DeltaGenerator, query: str) -> None:
+    logger.warning(f"Query: {query}")
+
     if not query:
         return
 

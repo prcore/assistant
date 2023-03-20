@@ -9,9 +9,7 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt requirements.txt
+RUN git clone https://github.com/prcore/assistant.git .
 RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
 
 ENTRYPOINT ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
