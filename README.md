@@ -11,6 +11,20 @@ What it used:
 - OpenAI GPT-3.5 turbo: for conversation summary and response generation
 - Streamlit: for web interface
 
+## Diagram
+
+First, use all documents + LangChain + OpenAI Embedding to create a Vector Store.
+
+When receiving a user's question, generate the vector of the question and obtain K most similar document paragraphs as part of prompt for background information.
+
+At the same time, retrieve the latest K messages in the conversation history and summary as part of prompt for historical messages.
+
+Then use the user's original message as the final prompt question and ask OpenAI's model for an answer.
+
+Finally, record this question-answer pair as part of Memory storage.
+
+![](https://i.imgur.com/AtUkJnC.png)
+
 ## Demo
 
 You can try the demo at [https://prcore-assistant.chaos.run](https://prcore-assistant.chaos.run).
