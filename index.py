@@ -11,7 +11,7 @@ import config
 
 @st.cache_data
 def create_index():
-    if not os.getenv("TEXT", None):
+    if os.getenv("TEST", None):
         print("Testing mode, skipping the creation of the index")
         return
     if os.path.exists(config.INDEX_PATH) and os.path.isdir(config.INDEX_PATH):
