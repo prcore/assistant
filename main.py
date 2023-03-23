@@ -46,7 +46,6 @@ def check_input(container: DeltaGenerator, query: str) -> None:
 
     output = chat.get_response(query)
     print(f"Response: {output}")
-    print("-" * 24)
     st.session_state["input_disabled"] = False
     st.session_state.ai.append(output)
     web.display_conversation(container)
