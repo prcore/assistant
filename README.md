@@ -29,6 +29,10 @@ Finally, record this question-answer pair as part of Memory storage.
 
 You can try the demo at [https://prcore-assistant.chaos.run](https://prcore-assistant.chaos.run).
 
+This is a screenshot of the demo:
+
+![](https://i.imgur.com/yTXOoVJ.png)
+
 ## Deployment
 
 Follow the steps below to deploy the service.
