@@ -2,7 +2,9 @@ import os
 from copy import deepcopy
 
 import streamlit as st
+from streamlit import runtime
 from streamlit.delta_generator import DeltaGenerator
+from streamlit.runtime.scriptrunner import get_script_run_ctx
 
 import config
 
@@ -50,3 +52,18 @@ def display_conversation(container: DeltaGenerator):
         for i, (human_msg, ai_msg) in enumerate(zip(human_list, ai_list)):
             message_containers[i * 2].info(human_msg, icon="💡")
             message_containers[i * 2 + 1].success(ai_msg, icon="🤖")
+
+
+def get_ip():
+    result = None
+    try:
+        ctx = get_script_run_ctx()
+        if ctx is None:
+            return None
+        session_info = runtime.get_instance().get_client(ctx.session_id)
+        if session_info is None:
+            return None
+        result = session_info.request.headers.get("X-Real-IP")  # noqa
+    except Exception as e:
+        print(e)
+    return result

@@ -27,8 +27,8 @@ def check_input(container: DeltaGenerator, query: str) -> None:
     if not query:
         return
 
-    print(f"Query: {query}")
-
+    print("-" * 24)
+    print(f"Query from {web.get_ip()}: {query}")
     if query == os.getenv("MAGIC_WORD", "".join(choice(ascii_letters + digits) for _ in range(16))):
         st.session_state["magic_mode"] = True
         st.session_state["memory"] = chat.new_magic_memory()
@@ -45,6 +45,8 @@ def check_input(container: DeltaGenerator, query: str) -> None:
     web.display_conversation(container)
 
     output = chat.get_response(query)
+    print(f"Response: {output}")
+    print("-" * 24)
     st.session_state["input_disabled"] = False
     st.session_state.ai.append(output)
     web.display_conversation(container)

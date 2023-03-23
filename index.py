@@ -14,10 +14,12 @@ def create_index():
     if os.getenv("TEST", None):
         print("Testing mode, skipping the creation of the index")
         return
-    if os.path.exists(config.INDEX_PATH) and os.path.isdir(config.INDEX_PATH):
+    print("Checking if index exists...")
+    if os.path.exists(config.INDEX_PATH) and os.path.isdir(config.INDEX_PATH) and os.listdir(config.INDEX_PATH):
         print("Index already exists, skipping the creation")
         return
-    if not os.path.exists(config.DOCS_PATH) or not os.path.isdir(config.DOCS_PATH):
+    print("Index does not exist, creating...")
+    if not os.path.exists(config.DOCS_PATH) or not os.path.isdir(config.DOCS_PATH) or not os.listdir(config.DOCS_PATH):
         raise SystemExit("Docs path does not exist or is not a non-empty directory")
     try:
         loader = DirectoryLoader(config.DOCS_PATH, loader_cls=TextLoader)
