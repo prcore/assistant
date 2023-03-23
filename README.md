@@ -49,4 +49,6 @@ The service will be deployed on `localhost:<WEB_PORT>`.
 ## Magic mode
 
 If you defined `MAGIC_WORD` in `.env` file, when user input the magic word,
-the assistant will allow user to ask any question, even not related to the documentation.
+the assistant will allow user to ask any question. 
+
+Note: In this mode, the assistant won't use the knowledge base.
