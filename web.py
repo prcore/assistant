@@ -63,7 +63,13 @@ def get_ip():
         session_info = runtime.get_instance().get_client(ctx.session_id)
         if session_info is None:
             return None
-        result = session_info.request.headers.get("X-Real-IP")  # noqa
+        request = session_info.request  # noqa
+        result = request.headers.get("X-Forwarded-For")
+        if not result:
+            return request.headers.get("Host")
+        if "," not in result:
+            return result
+        result = result.split(",")[0]
     except Exception as e:
         print(e)
     return result
